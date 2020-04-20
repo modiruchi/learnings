@@ -1,0 +1,101 @@
+BEM is for CSS structuring
+
+BEM:- https://en.bem.info/methodology/quick-start/
+
+divide the user interface into independent blocks.
+
+BLOCK:- functionally independent component.
+
+In HTML, blocks are represented by className.
+
+It should specify its purpose like clss='error' amd not 'red-text'
+
+Block should not set external geometery like no margins.
+
+No position on blocks
+
+No Style or css
+
+No ID
+
+Blocks can be nested in each other
+
+there can be any nummber of nesting
+
+ELEMENT:-
+
+part of block that cant be used separately
+
+Features:-
+
+element name describe sits purpose
+
+The structure of element's name is block-name__element-name
+<!-- `search-form` block -->
+<form class="search-form">
+    <!-- `input` element in the `search-form` block -->
+    <input class="search-form__input">
+
+    <!-- `button` element in the `search-form` block -->
+    <button class="search-form__button">Search</button>
+</form>
+
+Elements can be nested inside each other
+
+Can have any number of nesting levels
+
+Elements name scant define a hierarchy. they are always part of block.
+-->
+<form class="search-form">
+    <div class="search-form__content">
+        <input class="search-form__input">
+
+        <button class="search-form__button">Search</button>
+    </div>
+</form>
+
+
+The block name defines the namespace, which guarantees that the elements are dependent on the block (block__elem).
+
+A block can have a nested structure of elements in the DOM tree:
+
+Example
+
+<div class="block">
+    <div class="block__elem1">
+        <div class="block__elem2">
+            <div class="block__elem3"></div>
+        </div>
+    </div>
+</div>
+However, this block structure is always represented as a flat list of elements in the BEM methodology:
+
+Example
+
+.block {}
+.block__elem1 {}
+.block__elem2 {}
+.block__elem3 {}
+This allows you to change a block's DOM structure without making changes in the code for each separate element:
+
+Example
+
+<div class="block">
+    <div class="block__elem1">
+        <div class="block__elem2"></div>
+    </div>
+
+    <div class="block__elem3"></div>
+</div>
+
+
+An element is always part of the block and shouldnt be used separately.
+
+
+
+ELEEMNT OR BLOCK?
+
+If a section of code might be reused and it doesnt depend on other page components
+being implemented.
+
+If a section of code cant be used separately without the parent entity.
